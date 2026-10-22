@@ -1,0 +1,61 @@
+{
+  "schemaVersion": 1,
+  "capturedAt": "2026-10-22",
+  "revisionSource": "Hugging Face model API",
+  "servingProfile": {
+    "osUserland": "Red Hat Enterprise Linux 10.2 (UBI)",
+    "vllm": "0.31.0",
+    "torch": "2.13.0+cu130",
+    "cudaRuntime": "13.0",
+    "pi": "1.2.0",
+    "dtype": "bfloat16",
+    "kvCacheDtype": "fp8",
+    "maxModelLen": 65536,
+    "maxNumSeqs": 16,
+    "maxNumBatchedTokens": 16384,
+    "prefixCaching": true
+  },
+  "models": [
+    {
+      "id": "qwen",
+      "provider": "vllm-qwen",
+      "repository": "Qwen/Qwen3.8-27B",
+      "revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+      "revisionUrl": "https://huggingface.co/Qwen/Qwen3.8-27B/tree/1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+      "endpoint": "http://127.0.0.1:8001/v1",
+      "gpu": 0,
+      "thinking": "off",
+      "piThinkingFormat": "qwen-chat-template",
+      "mtpTokens": 3,
+      "configSha256": "191e0af232104ed8b65258cf3fb2b842e288008baca7633c11b82a1ac7203aab"
+    },
+    {
+      "id": "muse",
+      "provider": "vllm-muse",
+      "repository": "meta-models/Muse-Glimmer-30B",
+      "revision": "cec94fcfd6512f2cfe708138c32533b346ea4f69",
+      "revisionUrl": "https://huggingface.co/meta-models/Muse-Glimmer-30B/tree/cec94fcfd6512f2cfe708138c32533b346ea4f69",
+      "endpoint": "http://127.0.0.1:8002/v1",
+      "gpu": 1,
+      "thinking": "off",
+      "systemPromptSuffix": "Reasoning strength: low",
+      "configSha256": "5a9df2d8a385b3d361ab6ae68d73586f4e775033933bd0cd863fb7f3820e6a14"
+    },
+    {
+      "id": "gemma",
+      "provider": "vllm-gemma",
+      "repository": "google/gemma-4-31B-it",
+      "revision": "842da3794eaa0b77d5f08bae87a17459d91ff475",
+      "revisionUrl": "https://huggingface.co/google/gemma-4-31B-it/tree/842da3794eaa0b77d5f08bae87a17459d91ff475",
+      "endpoint": "http://127.0.0.1:8003/v1",
+      "gpu": 2,
+      "thinking": "off",
+      "generationSettings": {
+        "maxTokens": 8192,
+        "temperature": null,
+        "topP": null
+      },
+      "configSha256": "e967dd38bc5cfd38bd09a995a7bf4a754075df2b46aba68f7fbb5a791e6d8dd1"
+    }
+  ]
+}

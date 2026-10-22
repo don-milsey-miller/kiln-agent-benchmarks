@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/kiln-agent-benchmark/run-result.schema.json",
+  "title": "Kiln benchmark run result",
+  "type": "object",
+  "required": [
+    "schemaVersion", "experimentId", "runId", "taskId", "modelId",
+    "classification", "startedAt", "finishedAt", "wallSeconds",
+    "sourceSha", "promptSha256", "graderSha256", "patchSha256",
+    "agent", "grading", "cost"
+  ],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "experimentId": { "type": "string", "minLength": 1 },
+    "runId": { "type": "string", "minLength": 1 },
+    "taskId": { "type": "string", "minLength": 1 },
+    "modelId": { "type": "string", "minLength": 1 },
+    "classification": {
+      "enum": ["passed", "failed_tests", "timeout", "canceled", "agent_error", "infra_error", "policy_violation"]
+    },
+    "startedAt": { "type": "string", "format": "date-time" },
+    "finishedAt": { "type": "string", "format": "date-time" },
+    "wallSeconds": { "type": "number", "minimum": 0 },
+    "sourceSha": { "type": "string", "minLength": 7 },
+    "promptSha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+    "graderSha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+    "patchSha256": { "type": ["string", "null"], "pattern": "^[0-9a-f]{64}$" },
+    "agent": { "type": "object" },
+    "grading": { "type": "object" },
+    "tokens": { "type": "object" },
+    "telemetry": { "type": "object" },
+    "cost": { "type": "object" }
+  },
+  "additionalProperties": true
+}

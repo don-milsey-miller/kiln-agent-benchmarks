@@ -2,5 +2,6 @@
 evaluator-private/
 artifacts/private/
 artifacts/raw/
+artifacts/runs/
 node_modules/
 *.log

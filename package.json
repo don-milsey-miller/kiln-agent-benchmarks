@@ -1,0 +1,16 @@
+{
+  "name": "kiln-agent-benchmark",
+  "version": "0.2.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.mjs",
+    "validate": "node scripts/validate-public.mjs",
+    "build:bundles": "node scripts/build-task-bundles.mjs",
+    "dry-run": "node scripts/run-ms3.mjs",
+    "check": "npm run test && npm run validate"
+  }
+}

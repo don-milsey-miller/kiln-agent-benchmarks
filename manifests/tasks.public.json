@@ -12,6 +12,8 @@
       "replacesIssue": 160,
       "fixSha": "8a5354c3a87d1c338d9e300c285a843a1cb55056",
       "preFixSha": "4dbfc49bc567ba13656531872c4c3c5e5e9f3001",
+      "bundleTreeSha256": "b7f66efe6d98f4221228b9692060c063898a41fff638fe9c1ac479a8b6b0c686",
+      "graderSha256": "2af3f0b1d6bcb8d80e33f158e3e60df80509b05e29de4a66a872c285f8d060ea",
       "promptPath": "prompts/agent/S1.md",
       "promptSha256": "95c4b475ed0c1e7778b1a8a97535b6ba8919e028515bced2ae33e943ef721983"
     },
@@ -23,6 +25,8 @@
       "status": "ready",
       "fixSha": "d8e964363a05367c47a4985b709a3be815894974",
       "preFixSha": "b641f6d45821a1fd17a51718622b3879ebead0ac",
+      "bundleTreeSha256": "d6a9de945c4395765c3fd7195d7cae9c14349852388de1a7adda7123fc506a9d",
+      "graderSha256": "2d18db2f74641d04bb9cf7dafeaef41fa2187d4764f62d24b12ce96f5e97d8a5",
       "promptPath": "prompts/agent/M1.md",
       "promptSha256": "aad52a189b67b4d6b99d37baa0517c852e9d67776c973d71c21cb15ddfe7f96e"
     },
@@ -34,6 +38,8 @@
       "status": "ready",
       "fixSha": "3c602f49fd46b3fc2222e0a48bb8257bd07347a8",
       "preFixSha": "ba251ce1ddc70656a7cae5628e4ea64d4ec8fe23",
+      "bundleTreeSha256": "48516d78a1526960cb79cdf4fc05c6df5175ac42a97675a49628986c8883c508",
+      "graderSha256": "1fab2c0783003f45692e99aab2b043f2c2d6dbd32bfd8e6727cec286e2f017c8",
       "promptPath": "prompts/agent/L1.md",
       "promptSha256": "0bc5f77531cbde5666a4d655f7baa1a7207b5b40c3e7efde16984f0764e549c3"
     }

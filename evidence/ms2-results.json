@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 1,
+  "executedAt": "2026-10-22",
+  "status": "passed",
+  "spend": {
+    "runpodProvisioned": false,
+    "runpodCreditsUsed": 0
+  },
+  "bundles": {
+    "S1": {
+      "sourceSha": "4dbfc49bc567ba13656531872c4c3c5e5e9f3001",
+      "treeSha256": "b7f66efe6d98f4221228b9692060c063898a41fff638fe9c1ac479a8b6b0c686",
+      "files": 1151,
+      "gitMetadataPresent": false,
+      "fixingCommitPresent": false
+    },
+    "M1": {
+      "sourceSha": "b641f6d45821a1fd17a51718622b3879ebead0ac",
+      "treeSha256": "d6a9de945c4395765c3fd7195d7cae9c14349852388de1a7adda7123fc506a9d",
+      "files": 1208,
+      "gitMetadataPresent": false,
+      "fixingCommitPresent": false
+    },
+    "L1": {
+      "sourceSha": "ba251ce1ddc70656a7cae5628e4ea64d4ec8fe23",
+      "treeSha256": "48516d78a1526960cb79cdf4fc05c6df5175ac42a97675a49628986c8883c508",
+      "files": 1208,
+      "gitMetadataPresent": false,
+      "fixingCommitPresent": false
+    }
+  },
+  "graderControls": {
+    "S1": { "preFix": "failed_targeted", "fixed": "passed", "preRegressionPasses": 27, "fixedRegressionPasses": 29 },
+    "M1": { "preFix": "failed_targeted", "fixed": "passed", "preRegressionPasses": 5, "fixedRegressionPasses": 6, "platform": "windows-native" },
+    "L1": { "preFix": "failed_targeted", "fixed": "passed", "preRegressionPasses": 72, "fixedRegressionPasses": 72 }
+  },
+  "runner": {
+    "freshWorkspacePerAttempt": true,
+    "cleanGraderReplay": true,
+    "candidateTestsTransferredToGrader": false,
+    "scopePolicy": true,
+    "boundedTimeout": true,
+    "descendantCleanup": true,
+    "jsonlValidation": true,
+    "resultSchema": "schemas/run-result.schema.json",
+    "piAdapterImplemented": true,
+    "paidExecutionEnabled": false
+  }
+}

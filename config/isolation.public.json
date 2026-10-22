@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "offlineBackend": {
+    "id": "wsl-unshare",
+    "distribution": "Ubuntu-24.04",
+    "network": "new empty Linux network namespace",
+    "filesystem": "workspace copied into WSL private storage; Windows drives unavailable inside the namespace",
+    "environment": "empty environment with a minimal explicit allowlist"
+  },
+  "paidBackend": {
+    "status": "disabled",
+    "reason": "MS4 is not authorized and a deployment-specific local-vLLM-only relay has not been attested.",
+    "requiredControls": [
+      "dedicated unprivileged agent identity",
+      "hidden grader and reference data unreadable by that identity",
+      "network namespace allowing only the selected local vLLM endpoint",
+      "one agent per assigned GPU",
+      "verified descendant cleanup",
+      "explicit experiment and budget authorization"
+    ]
+  }
+}

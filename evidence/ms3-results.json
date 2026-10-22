@@ -1,0 +1,61 @@
+{
+  "schemaVersion": 1,
+  "experimentId": "kiln-ms3-offline-2026-10-22",
+  "executedAt": "2026-10-22T15:09:54.581Z",
+  "runner": {
+    "os": "Windows 11",
+    "isolationBackend": "WSL2 unshare",
+    "distribution": "Ubuntu-24.04"
+  },
+  "spend": {
+    "runpodProvisioned": false,
+    "runpodCreditsUsed": 0
+  },
+  "summary": {
+    "total": 10,
+    "counts": {
+      "agent_error": 2,
+      "canceled": 1,
+      "failed_tests": 3,
+      "infra_error": 1,
+      "passed": 1,
+      "policy_violation": 1,
+      "timeout": 1
+    },
+    "wallSeconds": 10.67,
+    "estimatedUsd": 0
+  },
+  "expectedClassifications": {
+    "valid": "passed",
+    "failing": "failed_tests",
+    "noop": "failed_tests",
+    "timeout": "timeout",
+    "canceled": "canceled",
+    "malformed": "agent_error",
+    "agent-error": "agent_error",
+    "scope-violation": "policy_violation",
+    "evaluator-failure": "infra_error",
+    "isolation-probe": "failed_tests"
+  },
+  "observedClassifications": {
+    "valid": "passed",
+    "failing": "failed_tests",
+    "noop": "failed_tests",
+    "timeout": "timeout",
+    "canceled": "canceled",
+    "malformed": "agent_error",
+    "agent-error": "agent_error",
+    "scope-violation": "policy_violation",
+    "evaluator-failure": "infra_error",
+    "isolation-probe": "failed_tests"
+  },
+  "isolationProbe": {
+    "type": "isolation_probe",
+    "windowsDriveVisible": false,
+    "networkReachable": false,
+    "hostSecretVisible": false
+  },
+  "descendantSurvived": false,
+  "mismatches": [],
+  "status": "passed"
+}

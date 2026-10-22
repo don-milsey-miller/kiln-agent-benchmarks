@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 1,
+  "tasks": {
+    "S1": {
+      "platform": "windows-pty",
+      "deadlineMinutes": 10,
+      "allowedProductionPaths": [
+        "bin/setup.mjs",
+        "lib/live-canary.mjs",
+        "lib/live-model-check.mjs",
+        "lib/setup-input.mjs",
+        "lib/setup-renderer-clack.mjs"
+      ]
+    },
+    "M1": {
+      "platform": "windows-native",
+      "deadlineMinutes": 30,
+      "allowedProductionPaths": [
+        "lib/windows-job.mjs",
+        "lib/windows/**"
+      ]
+    },
+    "L1": {
+      "platform": "windows-and-linux",
+      "deadlineMinutes": 120,
+      "allowedProductionPaths": [
+        "lib/credential-broker.mjs",
+        "lib/decision-bundle-journal.mjs",
+        "lib/specialists/**",
+        "lib/workflow-carryover.mjs",
+        "pi-package/extensions/kiln.js"
+      ]
+    }
+  },
+  "alwaysForbiddenPaths": [
+    ".git/**",
+    ".github/**",
+    "evaluator-private/**",
+    "artifacts/**",
+    "test/**",
+    "package.json",
+    "package-lock.json",
+    "pnpm-lock.yaml",
+    "yarn.lock"
+  ]
+}

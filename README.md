@@ -27,5 +27,15 @@ working clones, and private manifests are therefore ignored and remain only in
 the local `C:\Users\milsy\Documents\kiln-ai-benchmark` checkout. Do not push
 those files unless the repository is made private and the boundary is reviewed.
 
-The rejected issue #160 audit is retained in the reports for traceability. No
-model was run and no RunPod resources were provisioned during MS0/MS1.
+MS2 then built history-free task bundles, private independent graders, a bounded
+Pi/vLLM execution adapter, and a versioned result schema. MS3 exercised ten
+offline control paths through a WSL2 filesystem/network namespace; every
+classification and isolation assertion matched. See
+[`reports/MS2-ISOLATION-RUNNER.md`](reports/MS2-ISOLATION-RUNNER.md) and
+[`reports/MS3-OFFLINE-DRY-RUN.md`](reports/MS3-OFFLINE-DRY-RUN.md).
+Repeatable local commands are documented in
+[`docs/OFFLINE-HARNESS.md`](docs/OFFLINE-HARNESS.md).
+
+The rejected issue #160 audit is retained for traceability. No model was run and
+no RunPod resources were provisioned during MS0–MS3. Paid execution remains
+disabled pending separate MS4 authorization and deployment isolation checks.
