@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "experimentId": "kiln-ms0-ms1-2026-10-22",
+  "sourceRepository": "https://github.com/don-milsey-miller/kiln",
+  "tasks": [
+    {
+      "id": "S1",
+      "issue": 160,
+      "platform": "windows-pty",
+      "deadlineMinutes": 10,
+      "status": "not_benchmark_ready",
+      "provisionalFixSha": "8a5354c3a87d1c338d9e300c285a843a1cb55056",
+      "provisionalPreFixSha": "4dbfc49bc567ba13656531872c4c3c5e5e9f3001",
+      "auditedFixSha": "90484ed0e1b6fec597275ef938fcef6edfac3834",
+      "auditedPreFixSha": "46efeeb6e00661472beafbed6927067c0fca2213",
+      "promptPath": null,
+      "promptSha256": null,
+      "blocker": "The provisional parent is already fixed, while the corrected pre-fix snapshot does not fail the independent real-PTY test on this runner."
+    },
+    {
+      "id": "M1",
+      "issue": 200,
+      "platform": "windows-native",
+      "deadlineMinutes": 30,
+      "status": "ready",
+      "fixSha": "d8e964363a05367c47a4985b709a3be815894974",
+      "preFixSha": "b641f6d45821a1fd17a51718622b3879ebead0ac",
+      "promptPath": "prompts/agent/M1.md",
+      "promptSha256": "aad52a189b67b4d6b99d37baa0517c852e9d67776c973d71c21cb15ddfe7f96e"
+    },
+    {
+      "id": "L1",
+      "issue": 215,
+      "platform": "windows-and-linux",
+      "deadlineMinutes": 120,
+      "status": "ready",
+      "fixSha": "3c602f49fd46b3fc2222e0a48bb8257bd07347a8",
+      "preFixSha": "ba251ce1ddc70656a7cae5628e4ea64d4ec8fe23",
+      "promptPath": "prompts/agent/L1.md",
+      "promptSha256": "0bc5f77531cbde5666a4d655f7baa1a7207b5b40c3e7efde16984f0764e549c3"
+    }
+  ]
+}

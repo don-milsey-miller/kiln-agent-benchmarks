@@ -1,0 +1,6 @@
+.work/
+evaluator-private/
+artifacts/private/
+artifacts/raw/
+node_modules/
+*.log

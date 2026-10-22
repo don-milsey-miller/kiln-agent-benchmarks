@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "executedAt": "2026-10-22",
+  "runner": {
+    "os": "Microsoft Windows 11 Pro",
+    "version": "10.0.26300",
+    "build": "26300",
+    "architecture": "64-bit",
+    "powershell": "7.6.5",
+    "node": "24.18.0",
+    "npm": "11.16.0",
+    "git": "2.52.0.windows.1"
+  },
+  "spend": {
+    "runpodProvisioned": false,
+    "runpodCreditsUsed": 0
+  },
+  "tasks": {
+    "S1": {
+      "classification": "not_benchmark_ready",
+      "independentPreFixExit": 0,
+      "independentFixedExit": 0,
+      "existingPreFixTests": { "passed": 8, "failed": 0 },
+      "existingFixedTests": { "passed": 27, "failed": 0 },
+      "reason": "The expected historical failure did not reproduce, including a bracketed-paste PTY input."
+    },
+    "M1": {
+      "classification": "ready",
+      "independentPreFixExit": 1,
+      "independentFixedExit": 0,
+      "preFixFailure": "PowerShell cannot convert signed -1073740791 to System.UInt32; no exited record is written.",
+      "fixedObservation": {
+        "childExitUnsigned": 3221226505,
+        "hostExitUnsigned": 3221226505,
+        "released": true,
+        "remainingMembers": []
+      },
+      "existingPreFixTests": { "passed": 5, "failed": 0 },
+      "existingFixedTests": { "passed": 6, "failed": 0 }
+    },
+    "L1": {
+      "classification": "ready",
+      "independentPreFixExit": 1,
+      "independentFixedExit": 0,
+      "preFixFailure": "The production wrapper did not pass the research permission decision to the delegation runtime.",
+      "fixedObservation": {
+        "wrapperPassedResearchDecision": true,
+        "projectContext": "present",
+        "stateMode": "project",
+        "researchCredential": "present",
+        "runId": "absent",
+        "unrelatedSecret": "absent"
+      },
+      "existingPreFixTests": { "passed": 70, "failed": 0 },
+      "existingFixedTests": { "passed": 87, "failed": 0 }
+    }
+  }
+}
