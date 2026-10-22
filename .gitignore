@@ -5,3 +5,4 @@ artifacts/raw/
 artifacts/runs/
 node_modules/
 *.log
+__pycache__/

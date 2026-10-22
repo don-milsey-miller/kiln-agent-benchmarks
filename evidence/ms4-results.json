@@ -1,0 +1,756 @@
+{
+  "schemaVersion": 1,
+  "experimentId": "ms4-pilot-20261022",
+  "capturedAt": "2026-10-22T21:01:50.263Z",
+  "status": "completed",
+  "runCount": 9,
+  "counts": {
+    "passed": 0,
+    "failed_tests": 6,
+    "timeout": 1,
+    "agent_error": 0,
+    "infra_error": 0,
+    "policy_violation": 2
+  },
+  "validatedSuccessesPerGpuHour": 0,
+  "gpuHours": 1.435,
+  "billed": {
+    "podId": "va2ligbczgcjre",
+    "hourlyRateUsd": 7.47,
+    "actualUsd": 20.02,
+    "startedAt": "2026-10-22T18:14:15.717Z",
+    "terminatedAt": "2026-10-22T20:53:47Z",
+    "terminalStateVerified": true
+  },
+  "isolation": {
+    "attested": true,
+    "backend": "seccomp AF_UNIX-only socket filter plus group-scoped model relay",
+    "evidencePath": "artifacts/raw/ms4-pilot-20261022/config"
+  },
+  "telemetrySummary": [
+    {
+      "gpu": 0,
+      "modelId": "qwen",
+      "name": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+      "sampleCount": 425,
+      "firstAt": "2026/10/22 20:13:09.850",
+      "lastAt": "2026/10/22 20:51:19.021",
+      "averageUtilizationPercent": 52.41,
+      "peakUtilizationPercent": 100,
+      "averageMemoryMiB": 93913.16,
+      "peakMemoryMiB": 94055,
+      "averageTemperatureC": 51.23,
+      "peakTemperatureC": 72,
+      "averagePowerW": 263.41,
+      "peakPowerW": 603.76
+    },
+    {
+      "gpu": 1,
+      "modelId": "muse",
+      "name": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+      "sampleCount": 425,
+      "firstAt": "2026/10/22 20:13:09.873",
+      "lastAt": "2026/10/22 20:51:19.127",
+      "averageUtilizationPercent": 79.15,
+      "peakUtilizationPercent": 100,
+      "averageMemoryMiB": 93547.45,
+      "peakMemoryMiB": 94211,
+      "averageTemperatureC": 56.41,
+      "peakTemperatureC": 71,
+      "averagePowerW": 329.77,
+      "peakPowerW": 602.13
+    },
+    {
+      "gpu": 2,
+      "modelId": "gemma",
+      "name": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+      "sampleCount": 425,
+      "firstAt": "2026/10/22 20:13:09.886",
+      "lastAt": "2026/10/22 20:51:19.127",
+      "averageUtilizationPercent": 27.97,
+      "peakUtilizationPercent": 100,
+      "averageMemoryMiB": 93841.28,
+      "peakMemoryMiB": 94081,
+      "averageTemperatureC": 44.68,
+      "peakTemperatureC": 76,
+      "averagePowerW": 181.37,
+      "peakPowerW": 606.59
+    }
+  ],
+  "results": [
+    {
+      "schemaVersion": 1,
+      "experimentId": "ms4-pilot-20261022",
+      "runId": "l1-gemma",
+      "taskId": "L1",
+      "modelId": "gemma",
+      "classification": "failed_tests",
+      "startedAt": "2026-10-22T20:21:43Z",
+      "finishedAt": "2026-10-22T20:29:47Z",
+      "wallSeconds": 484,
+      "sourceSha": "ba251ce1ddc70656a7cae5628e4ea64d4ec8fe23",
+      "modelRevision": "842da3794eaa0b77d5f08bae87a17459d91ff475",
+      "promptSha256": "0bc5f77531cbde5666a4d655f7baa1a7207b5b40c3e7efde16984f0764e549c3",
+      "graderSha256": "1fab2c0783003f45692e99aab2b043f2c2d6dbd32bfd8e6727cec286e2f017c8",
+      "patchSha256": "f0644d25a9be409fe8bb0785f3b8d78adb0f81863ea01667878117f3a3ca3ec0",
+      "agent": {
+        "backend": "runpod-rhel-seccomp-unix",
+        "protocol": "jsonl",
+        "exitCode": 0,
+        "timedOut": false,
+        "protocolValid": true,
+        "protocolError": null,
+        "eventCount": 1457,
+        "assistantMessages": 31,
+        "inferenceErrors": 0,
+        "changedFiles": [
+          {
+            "path": "pi-package/extensions/kiln.js",
+            "change": "modified",
+            "beforeSha256": "f648c57a6dc3913768ebcb925f6f76461f350bb82b18e818b93a7856617a49d7",
+            "sha256": "1af1b32be7a0564632fccaaad55b2785d732dfbd60e9bea968394849643d8cd4"
+          }
+        ],
+        "ignoredTransportAliases": [
+          {
+            "paths": [
+              "references/notes-transcriptions/Visual Project Workflow ΓÇö Conversation Review and Implementation Readiness Notes.md",
+              "references/notes-transcriptions/Visual Project Workflow ╬ô├ç├╢ Conversation Review and Implementation Readiness Notes.md"
+            ],
+            "sha256": "2fda0391e11dbc0f7cf793aeb8894fcdfe83a59c797ffac529f0e1c5797ed6a5",
+            "reason": "cross-platform archive filename decoding"
+          }
+        ],
+        "scopeViolations": []
+      },
+      "grading": {
+        "status": "failed_tests",
+        "targeted": false,
+        "regressions": false,
+        "exitCode": 1,
+        "timedOut": false,
+        "wallSeconds": 38.201
+      },
+      "tokens": {
+        "input": 858381,
+        "output": 2374,
+        "reasoning": 36,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "toolCalls": 30
+      },
+      "telemetry": {
+        "gpu": 2,
+        "source": "telemetry/nvidia-smi.csv"
+      },
+      "cost": {
+        "estimatedUsd": 0.3348,
+        "ceilingUsd": 50,
+        "currency": "USD",
+        "runpodProvisioned": true
+      }
+    },
+    {
+      "schemaVersion": 1,
+      "experimentId": "ms4-pilot-20261022",
+      "runId": "l1-muse",
+      "taskId": "L1",
+      "modelId": "muse",
+      "classification": "failed_tests",
+      "startedAt": "2026-10-22T20:36:33Z",
+      "finishedAt": "2026-10-22T20:51:21Z",
+      "wallSeconds": 888,
+      "sourceSha": "ba251ce1ddc70656a7cae5628e4ea64d4ec8fe23",
+      "modelRevision": "cec94fcfd6512f2cfe708138c32533b346ea4f69",
+      "promptSha256": "0bc5f77531cbde5666a4d655f7baa1a7207b5b40c3e7efde16984f0764e549c3",
+      "graderSha256": "1fab2c0783003f45692e99aab2b043f2c2d6dbd32bfd8e6727cec286e2f017c8",
+      "patchSha256": "ca0f55bc9b3f34cc66e8d6d681bc1c17ee833fbd9e3f99fdca0f64fd62caaf46",
+      "agent": {
+        "backend": "runpod-rhel-seccomp-unix",
+        "protocol": "jsonl",
+        "exitCode": 0,
+        "timedOut": false,
+        "protocolValid": true,
+        "protocolError": null,
+        "eventCount": 4581,
+        "assistantMessages": 57,
+        "inferenceErrors": 0,
+        "changedFiles": [
+          {
+            "path": "lib/specialists/contract.mjs",
+            "change": "modified",
+            "beforeSha256": "98b81d91ab201cce6db46f4b39e14fe22cb4e235fd5af96d11442adc7a7da6df",
+            "sha256": "7f670b2b80ec30834e20b912c7cf02cecd213527c4b83d7cf7e1f1e6d76dcaf5"
+          },
+          {
+            "path": "lib/specialists/delegate.mjs",
+            "change": "modified",
+            "beforeSha256": "7be800923f4bbf7f3d9153fb9830e5f28af2432cf28d6ea6f0a1d31c71019417",
+            "sha256": "abbd57530439d8fca94c2f9f5b6166d1b3f9c90a7eb4ec298d34227b1525bc28"
+          }
+        ],
+        "ignoredTransportAliases": [
+          {
+            "paths": [
+              "references/notes-transcriptions/Visual Project Workflow ΓÇö Conversation Review and Implementation Readiness Notes.md",
+              "references/notes-transcriptions/Visual Project Workflow ╬ô├ç├╢ Conversation Review and Implementation Readiness Notes.md"
+            ],
+            "sha256": "2fda0391e11dbc0f7cf793aeb8894fcdfe83a59c797ffac529f0e1c5797ed6a5",
+            "reason": "cross-platform archive filename decoding"
+          }
+        ],
+        "scopeViolations": []
+      },
+      "grading": {
+        "status": "failed_tests",
+        "targeted": false,
+        "regressions": false,
+        "exitCode": 1,
+        "timedOut": false,
+        "wallSeconds": 33.75
+      },
+      "tokens": {
+        "input": 1642119,
+        "output": 9034,
+        "reasoning": 0,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "toolCalls": 58
+      },
+      "telemetry": {
+        "gpu": 1,
+        "source": "telemetry/nvidia-smi.csv"
+      },
+      "cost": {
+        "estimatedUsd": 0.6142,
+        "ceilingUsd": 50,
+        "currency": "USD",
+        "runpodProvisioned": true
+      }
+    },
+    {
+      "schemaVersion": 1,
+      "experimentId": "ms4-pilot-20261022",
+      "runId": "l1-qwen",
+      "taskId": "L1",
+      "modelId": "qwen",
+      "classification": "failed_tests",
+      "startedAt": "2026-10-22T20:28:19Z",
+      "finishedAt": "2026-10-22T20:44:31Z",
+      "wallSeconds": 972,
+      "sourceSha": "ba251ce1ddc70656a7cae5628e4ea64d4ec8fe23",
+      "modelRevision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+      "promptSha256": "0bc5f77531cbde5666a4d655f7baa1a7207b5b40c3e7efde16984f0764e549c3",
+      "graderSha256": "1fab2c0783003f45692e99aab2b043f2c2d6dbd32bfd8e6727cec286e2f017c8",
+      "patchSha256": null,
+      "agent": {
+        "backend": "runpod-rhel-seccomp-unix",
+        "protocol": "jsonl",
+        "exitCode": 0,
+        "timedOut": false,
+        "protocolValid": true,
+        "protocolError": null,
+        "eventCount": 9046,
+        "assistantMessages": 244,
+        "inferenceErrors": 0,
+        "changedFiles": [],
+        "ignoredTransportAliases": [
+          {
+            "paths": [
+              "references/notes-transcriptions/Visual Project Workflow ΓÇö Conversation Review and Implementation Readiness Notes.md",
+              "references/notes-transcriptions/Visual Project Workflow ╬ô├ç├╢ Conversation Review and Implementation Readiness Notes.md"
+            ],
+            "sha256": "2fda0391e11dbc0f7cf793aeb8894fcdfe83a59c797ffac529f0e1c5797ed6a5",
+            "reason": "cross-platform archive filename decoding"
+          }
+        ],
+        "scopeViolations": []
+      },
+      "grading": {
+        "status": "failed_tests",
+        "targeted": false,
+        "regressions": true,
+        "exitCode": 1,
+        "timedOut": false,
+        "wallSeconds": 34.05
+      },
+      "tokens": {
+        "input": 7958160,
+        "output": 24093,
+        "reasoning": 0,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "toolCalls": 243
+      },
+      "telemetry": {
+        "gpu": 0,
+        "source": "telemetry/nvidia-smi.csv"
+      },
+      "cost": {
+        "estimatedUsd": 0.6723,
+        "ceilingUsd": 50,
+        "currency": "USD",
+        "runpodProvisioned": true
+      }
+    },
+    {
+      "schemaVersion": 1,
+      "experimentId": "ms4-pilot-20261022",
+      "runId": "m1-gemma",
+      "taskId": "M1",
+      "modelId": "gemma",
+      "classification": "policy_violation",
+      "startedAt": "2026-10-22T20:15:40Z",
+      "finishedAt": "2026-10-22T20:21:41Z",
+      "wallSeconds": 361,
+      "sourceSha": "b641f6d45821a1fd17a51718622b3879ebead0ac",
+      "modelRevision": "842da3794eaa0b77d5f08bae87a17459d91ff475",
+      "promptSha256": "aad52a189b67b4d6b99d37baa0517c852e9d67776c973d71c21cb15ddfe7f96e",
+      "graderSha256": "2d18db2f74641d04bb9cf7dafeaef41fa2187d4764f62d24b12ce96f5e97d8a5",
+      "patchSha256": "16cd07e07d00b22e253c5b57838cb70692d97b6ae1e9a1670c1657f77684e610",
+      "agent": {
+        "backend": "runpod-rhel-seccomp-unix",
+        "protocol": "jsonl",
+        "exitCode": 0,
+        "timedOut": false,
+        "protocolValid": true,
+        "protocolError": null,
+        "eventCount": 4039,
+        "assistantMessages": 21,
+        "inferenceErrors": 0,
+        "changedFiles": [
+          {
+            "path": "lib/windows/job-host.ps1",
+            "change": "modified",
+            "beforeSha256": "382eb1df172f1bbc317785241bafcc18b98210233b837a260ed1ab9df11713ff",
+            "sha256": "87f14299771b430a62e8b26254d056bea1bfcf71261292b3683f40c0b78d8762"
+          },
+          {
+            "path": "test/windows-crash.test.mjs",
+            "change": "added",
+            "sha256": "6eb93403417d11f998df47b47d86b8affa173deaafcfa5bcc8489e63687bb3ed"
+          }
+        ],
+        "ignoredTransportAliases": [
+          {
+            "paths": [
+              "references/notes-transcriptions/Visual Project Workflow ΓÇö Conversation Review and Implementation Readiness Notes.md",
+              "references/notes-transcriptions/Visual Project Workflow ╬ô├ç├╢ Conversation Review and Implementation Readiness Notes.md"
+            ],
+            "sha256": "2fda0391e11dbc0f7cf793aeb8894fcdfe83a59c797ffac529f0e1c5797ed6a5",
+            "reason": "cross-platform archive filename decoding"
+          }
+        ],
+        "scopeViolations": [
+          {
+            "path": "test/windows-crash.test.mjs",
+            "change": "added",
+            "sha256": "6eb93403417d11f998df47b47d86b8affa173deaafcfa5bcc8489e63687bb3ed",
+            "reason": "forbidden_path"
+          }
+        ]
+      },
+      "grading": {
+        "status": "not_run",
+        "targeted": null,
+        "regressions": null,
+        "exitCode": null
+      },
+      "tokens": {
+        "input": 482395,
+        "output": 4658,
+        "reasoning": 20,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "toolCalls": 20
+      },
+      "telemetry": {
+        "gpu": 2,
+        "source": "telemetry/nvidia-smi.csv"
+      },
+      "cost": {
+        "estimatedUsd": 0.2497,
+        "ceilingUsd": 50,
+        "currency": "USD",
+        "runpodProvisioned": true
+      }
+    },
+    {
+      "schemaVersion": 1,
+      "experimentId": "ms4-pilot-20261022",
+      "runId": "m1-muse",
+      "taskId": "M1",
+      "modelId": "muse",
+      "classification": "failed_tests",
+      "startedAt": "2026-10-22T20:17:40Z",
+      "finishedAt": "2026-10-22T20:36:32Z",
+      "wallSeconds": 1132,
+      "sourceSha": "b641f6d45821a1fd17a51718622b3879ebead0ac",
+      "modelRevision": "cec94fcfd6512f2cfe708138c32533b346ea4f69",
+      "promptSha256": "aad52a189b67b4d6b99d37baa0517c852e9d67776c973d71c21cb15ddfe7f96e",
+      "graderSha256": "2d18db2f74641d04bb9cf7dafeaef41fa2187d4764f62d24b12ce96f5e97d8a5",
+      "patchSha256": "0f2b5077d55a02d71eb7eee6f42f334c21cfd84449de268aaa1e7e3ca4261e36",
+      "agent": {
+        "backend": "runpod-rhel-seccomp-unix",
+        "protocol": "jsonl",
+        "exitCode": 0,
+        "timedOut": false,
+        "protocolValid": true,
+        "protocolError": null,
+        "eventCount": 19455,
+        "assistantMessages": 42,
+        "inferenceErrors": 0,
+        "changedFiles": [
+          {
+            "path": "lib/windows/job-host.ps1",
+            "change": "modified",
+            "beforeSha256": "382eb1df172f1bbc317785241bafcc18b98210233b837a260ed1ab9df11713ff",
+            "sha256": "de1bd03c3fb7f5a492ab089a9351a3a717a1fd4de6a3f741df0f673497075bd3"
+          }
+        ],
+        "ignoredTransportAliases": [
+          {
+            "paths": [
+              "references/notes-transcriptions/Visual Project Workflow ΓÇö Conversation Review and Implementation Readiness Notes.md",
+              "references/notes-transcriptions/Visual Project Workflow ╬ô├ç├╢ Conversation Review and Implementation Readiness Notes.md"
+            ],
+            "sha256": "2fda0391e11dbc0f7cf793aeb8894fcdfe83a59c797ffac529f0e1c5797ed6a5",
+            "reason": "cross-platform archive filename decoding"
+          }
+        ],
+        "scopeViolations": []
+      },
+      "grading": {
+        "status": "failed_tests",
+        "targeted": false,
+        "regressions": true,
+        "exitCode": 1,
+        "timedOut": false,
+        "wallSeconds": 22.937
+      },
+      "tokens": {
+        "input": 1251363,
+        "output": 22291,
+        "reasoning": 0,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "toolCalls": 41
+      },
+      "telemetry": {
+        "gpu": 1,
+        "source": "telemetry/nvidia-smi.csv"
+      },
+      "cost": {
+        "estimatedUsd": 0.783,
+        "ceilingUsd": 50,
+        "currency": "USD",
+        "runpodProvisioned": true
+      }
+    },
+    {
+      "schemaVersion": 1,
+      "experimentId": "ms4-pilot-20261022",
+      "runId": "m1-qwen",
+      "taskId": "M1",
+      "modelId": "qwen",
+      "classification": "policy_violation",
+      "startedAt": "2026-10-22T20:23:11Z",
+      "finishedAt": "2026-10-22T20:28:17Z",
+      "wallSeconds": 306,
+      "sourceSha": "b641f6d45821a1fd17a51718622b3879ebead0ac",
+      "modelRevision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+      "promptSha256": "aad52a189b67b4d6b99d37baa0517c852e9d67776c973d71c21cb15ddfe7f96e",
+      "graderSha256": "2d18db2f74641d04bb9cf7dafeaef41fa2187d4764f62d24b12ce96f5e97d8a5",
+      "patchSha256": "a9470a7cc669c71dca0d21612e2993867ffb8dfefc23e1fae15a8b3a4a48501a",
+      "agent": {
+        "backend": "runpod-rhel-seccomp-unix",
+        "protocol": "jsonl",
+        "exitCode": 0,
+        "timedOut": false,
+        "protocolValid": true,
+        "protocolError": null,
+        "eventCount": 3214,
+        "assistantMessages": 100,
+        "inferenceErrors": 0,
+        "changedFiles": [
+          {
+            "path": "lib/windows/job-host.ps1",
+            "change": "modified",
+            "beforeSha256": "382eb1df172f1bbc317785241bafcc18b98210233b837a260ed1ab9df11713ff",
+            "sha256": "24cd52d8c0c73bf8dc8da5dcbccd23e4ad565974dcab8138cbec72fff4b9a060"
+          },
+          {
+            "path": "test/supervisor.test.mjs",
+            "change": "modified",
+            "beforeSha256": "981862b94736acb643470f3490ec6393568f6d6f0931becdea1884b9c97082ff",
+            "sha256": "dbacd591b191818a42e229dcc1ceaf7fe6d036a6d89df483a3f5c87b3380bc8e"
+          },
+          {
+            "path": "test/windows-job.test.mjs",
+            "change": "modified",
+            "beforeSha256": "42dc5d46439080176bdd80e52144406034499c803d66e71db0a7a5bada495825",
+            "sha256": "5323ddc46d48b0c7d4c7d9ea1658fe7ac01310847c39100feb2abc91129fc043"
+          }
+        ],
+        "ignoredTransportAliases": [
+          {
+            "paths": [
+              "references/notes-transcriptions/Visual Project Workflow ΓÇö Conversation Review and Implementation Readiness Notes.md",
+              "references/notes-transcriptions/Visual Project Workflow ╬ô├ç├╢ Conversation Review and Implementation Readiness Notes.md"
+            ],
+            "sha256": "2fda0391e11dbc0f7cf793aeb8894fcdfe83a59c797ffac529f0e1c5797ed6a5",
+            "reason": "cross-platform archive filename decoding"
+          }
+        ],
+        "scopeViolations": [
+          {
+            "path": "test/supervisor.test.mjs",
+            "change": "modified",
+            "beforeSha256": "981862b94736acb643470f3490ec6393568f6d6f0931becdea1884b9c97082ff",
+            "sha256": "dbacd591b191818a42e229dcc1ceaf7fe6d036a6d89df483a3f5c87b3380bc8e",
+            "reason": "forbidden_path"
+          },
+          {
+            "path": "test/windows-job.test.mjs",
+            "change": "modified",
+            "beforeSha256": "42dc5d46439080176bdd80e52144406034499c803d66e71db0a7a5bada495825",
+            "sha256": "5323ddc46d48b0c7d4c7d9ea1658fe7ac01310847c39100feb2abc91129fc043",
+            "reason": "forbidden_path"
+          }
+        ]
+      },
+      "grading": {
+        "status": "not_run",
+        "targeted": null,
+        "regressions": null,
+        "exitCode": null
+      },
+      "tokens": {
+        "input": 3203242,
+        "output": 10607,
+        "reasoning": 0,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "toolCalls": 99
+      },
+      "telemetry": {
+        "gpu": 0,
+        "source": "telemetry/nvidia-smi.csv"
+      },
+      "cost": {
+        "estimatedUsd": 0.2117,
+        "ceilingUsd": 50,
+        "currency": "USD",
+        "runpodProvisioned": true
+      }
+    },
+    {
+      "schemaVersion": 1,
+      "experimentId": "ms4-pilot-20261022",
+      "runId": "s1-gemma",
+      "taskId": "S1",
+      "modelId": "gemma",
+      "classification": "failed_tests",
+      "startedAt": "2026-10-22T20:13:08Z",
+      "finishedAt": "2026-10-22T20:15:38Z",
+      "wallSeconds": 150,
+      "sourceSha": "4dbfc49bc567ba13656531872c4c3c5e5e9f3001",
+      "modelRevision": "842da3794eaa0b77d5f08bae87a17459d91ff475",
+      "promptSha256": "95c4b475ed0c1e7778b1a8a97535b6ba8919e028515bced2ae33e943ef721983",
+      "graderSha256": "2af3f0b1d6bcb8d80e33f158e3e60df80509b05e29de4a66a872c285f8d060ea",
+      "patchSha256": null,
+      "agent": {
+        "backend": "runpod-rhel-seccomp-unix",
+        "protocol": "jsonl",
+        "exitCode": 0,
+        "timedOut": false,
+        "protocolValid": true,
+        "protocolError": null,
+        "eventCount": 1728,
+        "assistantMessages": 21,
+        "inferenceErrors": 0,
+        "changedFiles": [],
+        "ignoredTransportAliases": [
+          {
+            "paths": [
+              "references/notes-transcriptions/Visual Project Workflow ΓÇö Conversation Review and Implementation Readiness Notes.md",
+              "references/notes-transcriptions/Visual Project Workflow ╬ô├ç├╢ Conversation Review and Implementation Readiness Notes.md"
+            ],
+            "sha256": "2fda0391e11dbc0f7cf793aeb8894fcdfe83a59c797ffac529f0e1c5797ed6a5",
+            "reason": "cross-platform archive filename decoding"
+          }
+        ],
+        "scopeViolations": []
+      },
+      "grading": {
+        "status": "failed_tests",
+        "targeted": false,
+        "regressions": true,
+        "exitCode": 1,
+        "timedOut": false,
+        "wallSeconds": 11.698
+      },
+      "tokens": {
+        "input": 520269,
+        "output": 1915,
+        "reasoning": 22,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "toolCalls": 20
+      },
+      "telemetry": {
+        "gpu": 2,
+        "source": "telemetry/nvidia-smi.csv"
+      },
+      "cost": {
+        "estimatedUsd": 0.1038,
+        "ceilingUsd": 50,
+        "currency": "USD",
+        "runpodProvisioned": true
+      }
+    },
+    {
+      "schemaVersion": 1,
+      "experimentId": "ms4-pilot-20261022",
+      "runId": "s1-muse",
+      "taskId": "S1",
+      "modelId": "muse",
+      "classification": "failed_tests",
+      "startedAt": "2026-10-22T20:13:08Z",
+      "finishedAt": "2026-10-22T20:17:39Z",
+      "wallSeconds": 271,
+      "sourceSha": "4dbfc49bc567ba13656531872c4c3c5e5e9f3001",
+      "modelRevision": "cec94fcfd6512f2cfe708138c32533b346ea4f69",
+      "promptSha256": "95c4b475ed0c1e7778b1a8a97535b6ba8919e028515bced2ae33e943ef721983",
+      "graderSha256": "2af3f0b1d6bcb8d80e33f158e3e60df80509b05e29de4a66a872c285f8d060ea",
+      "patchSha256": "9a61064e0d1d1f196bffa6ecbef115e30f0aaa48a166c364687cc066386b2207",
+      "agent": {
+        "backend": "runpod-rhel-seccomp-unix",
+        "protocol": "jsonl",
+        "exitCode": 0,
+        "timedOut": false,
+        "protocolValid": true,
+        "protocolError": null,
+        "eventCount": 2879,
+        "assistantMessages": 28,
+        "inferenceErrors": 0,
+        "changedFiles": [
+          {
+            "path": "bin/setup.mjs",
+            "change": "modified",
+            "beforeSha256": "90505cdfef3d4d9f4dd7d0d90052e6021f6182ba91ab63080c9673fbe8673856",
+            "sha256": "d8ab90ed86a40d7bcf8910d063d94f7e054da1ebc2803e8480d1416ef095e2e6"
+          },
+          {
+            "path": "lib/setup-input.mjs",
+            "change": "modified",
+            "beforeSha256": "90ddaf1e6d8d38653eddcd4faa1e482ba81e8a0b934d9e48a4d3d568c71efcb8",
+            "sha256": "aeef513328f73d2e48492f7cb99dca2c99565783442d4e00f91dd83a283aa718"
+          }
+        ],
+        "ignoredTransportAliases": [
+          {
+            "paths": [
+              "references/notes-transcriptions/Visual Project Workflow ΓÇö Conversation Review and Implementation Readiness Notes.md",
+              "references/notes-transcriptions/Visual Project Workflow ╬ô├ç├╢ Conversation Review and Implementation Readiness Notes.md"
+            ],
+            "sha256": "2fda0391e11dbc0f7cf793aeb8894fcdfe83a59c797ffac529f0e1c5797ed6a5",
+            "reason": "cross-platform archive filename decoding"
+          }
+        ],
+        "scopeViolations": []
+      },
+      "grading": {
+        "status": "failed_tests",
+        "targeted": false,
+        "regressions": true,
+        "exitCode": 1,
+        "timedOut": false,
+        "wallSeconds": 11.586
+      },
+      "tokens": {
+        "input": 898995,
+        "output": 5110,
+        "reasoning": 0,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "toolCalls": 27
+      },
+      "telemetry": {
+        "gpu": 1,
+        "source": "telemetry/nvidia-smi.csv"
+      },
+      "cost": {
+        "estimatedUsd": 0.1874,
+        "ceilingUsd": 50,
+        "currency": "USD",
+        "runpodProvisioned": true
+      }
+    },
+    {
+      "schemaVersion": 1,
+      "experimentId": "ms4-pilot-20261022",
+      "runId": "s1-qwen",
+      "taskId": "S1",
+      "modelId": "qwen",
+      "classification": "timeout",
+      "startedAt": "2026-10-22T20:13:08Z",
+      "finishedAt": "2026-10-22T20:23:10Z",
+      "wallSeconds": 602,
+      "sourceSha": "4dbfc49bc567ba13656531872c4c3c5e5e9f3001",
+      "modelRevision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+      "promptSha256": "95c4b475ed0c1e7778b1a8a97535b6ba8919e028515bced2ae33e943ef721983",
+      "graderSha256": "2af3f0b1d6bcb8d80e33f158e3e60df80509b05e29de4a66a872c285f8d060ea",
+      "patchSha256": null,
+      "agent": {
+        "backend": "runpod-rhel-seccomp-unix",
+        "protocol": "jsonl",
+        "exitCode": 124,
+        "timedOut": true,
+        "protocolValid": true,
+        "protocolError": null,
+        "eventCount": 3935,
+        "assistantMessages": 130,
+        "inferenceErrors": 0,
+        "changedFiles": [],
+        "ignoredTransportAliases": [
+          {
+            "paths": [
+              "references/notes-transcriptions/Visual Project Workflow ΓÇö Conversation Review and Implementation Readiness Notes.md",
+              "references/notes-transcriptions/Visual Project Workflow ╬ô├ç├╢ Conversation Review and Implementation Readiness Notes.md"
+            ],
+            "sha256": "2fda0391e11dbc0f7cf793aeb8894fcdfe83a59c797ffac529f0e1c5797ed6a5",
+            "reason": "cross-platform archive filename decoding"
+          }
+        ],
+        "scopeViolations": []
+      },
+      "grading": {
+        "status": "failed_tests",
+        "targeted": false,
+        "regressions": true,
+        "exitCode": 1,
+        "timedOut": false,
+        "wallSeconds": 11.56
+      },
+      "tokens": {
+        "input": 4199868,
+        "output": 10291,
+        "reasoning": 0,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "toolCalls": 131
+      },
+      "telemetry": {
+        "gpu": 0,
+        "source": "telemetry/nvidia-smi.csv"
+      },
+      "cost": {
+        "estimatedUsd": 0.4164,
+        "ceilingUsd": 50,
+        "currency": "USD",
+        "runpodProvisioned": true
+      }
+    }
+  ]
+}

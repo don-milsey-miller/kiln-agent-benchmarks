@@ -8,12 +8,27 @@
     "environment": "empty environment with a minimal explicit allowlist"
   },
   "paidBackend": {
-    "status": "disabled",
-    "reason": "MS4 is not authorized and a deployment-specific local-vLLM-only relay has not been attested.",
+    "status": "completed",
+    "reason": "MS4 completed under the authorized $50 cap. At 2026-10-22T20:12:25Z every model passed a real Pi completion plus negative probes for direct host TCP, external IPv4, non-Unix sockets, sibling model sockets, and root SSH material. Nine artifacts were retrieved and verified before the pod was terminated.",
+    "attestedAt": "2026-10-22T20:12:25Z",
+    "experimentId": "ms4-pilot-20261022",
+    "maximumBudgetUsd": 50,
+    "provider": "Runpod",
+    "executionPolicy": {
+      "path": "prompts/agent/EXECUTION-POLICY.md",
+      "sha256": "f111fa7d5db3180a4835c906c027945f879ab4cc803f82c28e99b8fd35128b22"
+    },
+    "gpu": {
+      "id": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+      "count": 3,
+      "cloud": "SECURE"
+    },
+    "image": "ttl.sh/rtx6000pro-rhel10-a560c8e46ceb44c29e6de4763b0165db:24h@sha256:cf3489cc5c1460591d8c94bcefd3537d76b6c18f326ba202908388988ca59be1",
     "requiredControls": [
       "dedicated unprivileged agent identity",
       "hidden grader and reference data unreadable by that identity",
-      "network namespace allowing only the selected local vLLM endpoint",
+      "inherited seccomp filter denying every non-Unix socket while a group-scoped Unix socket exposes only the selected local vLLM endpoint",
+      "ownership-enforced local-overlay workspaces with completed evidence copied to persistent storage only after execution",
       "one agent per assigned GPU",
       "verified descendant cleanup",
       "explicit experiment and budget authorization"

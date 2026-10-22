@@ -28,6 +28,21 @@ for (const model of models.models) {
   if (!/^[0-9a-f]{40}$/.test(model.revision)) throw new Error(`${model.id} is not pinned to an immutable revision`);
   if (!/^http:\/\/127\.0\.0\.1:\d+\/v1$/.test(model.endpoint)) throw new Error(`${model.id} endpoint is not loopback-only`);
 }
-if (isolation.paidBackend.status !== "disabled") throw new Error("paid execution must remain disabled before MS4 approval");
+const allowedPaidStatuses = new Set(["disabled", "authorized_pending_attestation", "enabled", "completed", "halted"]);
+if (!allowedPaidStatuses.has(isolation.paidBackend.status)) throw new Error("paid execution has an invalid state");
+if (isolation.paidBackend.status !== "disabled") {
+  if (isolation.paidBackend.experimentId !== "ms4-pilot-20261022") throw new Error("paid execution experiment is not frozen");
+  if (isolation.paidBackend.maximumBudgetUsd !== 50) throw new Error("paid execution budget differs from the approved ceiling");
+  if (isolation.paidBackend.gpu?.count !== 3 || isolation.paidBackend.gpu?.cloud !== "SECURE") throw new Error("paid execution topology differs from the approved topology");
+  if (!/@sha256:[0-9a-f]{64}$/.test(isolation.paidBackend.image ?? "")) throw new Error("paid execution image is not digest-pinned");
+  const policyHash = await sha256File(resolve(root, isolation.paidBackend.executionPolicy?.path ?? ""));
+  if (policyHash !== isolation.paidBackend.executionPolicy?.sha256) throw new Error("paid execution policy hash mismatch");
+}
+if (isolation.paidBackend.status === "completed") {
+  const ms4 = await readJson("evidence/ms4-results.json");
+  if (ms4.status !== "completed" || ms4.runCount !== 9 || ms4.results?.length !== 9) throw new Error("MS4 completion evidence is incomplete");
+  if (!ms4.billed?.terminalStateVerified) throw new Error("MS4 pod shutdown was not verified");
+  if (!Number.isFinite(ms4.billed?.actualUsd) || ms4.billed.actualUsd > isolation.paidBackend.maximumBudgetUsd) throw new Error("MS4 spending evidence exceeds or omits the approved ceiling");
+}
 if (ms2.status !== "passed" || ms3.status !== "passed") throw new Error("MS2/MS3 evidence is not green");
-console.log(JSON.stringify({ ok: true, tasks: tasks.tasks.length, models: models.models.length, ms2: ms2.status, ms3: ms3.status, paidExecution: "disabled" }));
+console.log(JSON.stringify({ ok: true, tasks: tasks.tasks.length, models: models.models.length, ms2: ms2.status, ms3: ms3.status, paidExecution: isolation.paidBackend.status }));

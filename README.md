@@ -37,5 +37,14 @@ Repeatable local commands are documented in
 [`docs/OFFLINE-HARNESS.md`](docs/OFFLINE-HARNESS.md).
 
 The rejected issue #160 audit is retained for traceability. No model was run and
-no RunPod resources were provisioned during MS0–MS3. Paid execution remains
-disabled pending separate MS4 authorization and deployment isolation checks.
+no RunPod resources were provisioned during MS0–MS3.
+
+MS4 ran the separately authorized nine-attempt pilot on one three-GPU RunPod
+instance. All attempts completed or reached their bound without an inference or
+infrastructure error, but none passed the independent hidden grader: six failed
+behavioral tests, one timed out, and two violated the frozen file-scope policy.
+The pod was terminated after artifact verification. The rounded account debit
+was **$20.02**, within the approved **$50** ceiling. See the
+[`HTML report`](reports/MS4-PAID-PILOT.html),
+[`Markdown summary`](reports/MS4-PAID-PILOT.md), and
+[`structured evidence`](evidence/ms4-results.json).
