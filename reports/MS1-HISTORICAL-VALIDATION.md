@@ -13,18 +13,22 @@
 Node 24.18.0 matches the version recorded by the historical M1 and L1 pull
 requests.
 
-## S1 — not benchmark-ready
+## S1 — ready (replacement issue #162)
 
-The candidate pair was invalid because `8a5354c3^` already contained PR #161.
-Testing the corrected boundary (`46efeeb6…` → `90484ed0…`) with a real Windows
-PTY produced success on both revisions for literal and bracketed-paste `Yes`
-and for `No`. The pre-fix relevant suite also passed 8/8; the fixed suite passed
-27/27, including the newly added PTY regression.
+The original issue #160 case remains rejected: its provisional pair was invalid,
+and the corrected boundary did not reproduce the claimed failure on this runner.
+With approval to replace it, S1 now uses issue #162 and the direct boundary
+`4dbfc49b…` → `8a5354c3…`.
 
-Because no targeted red result was observed, S1 is classified
-`not_benchmark_ready`. A synthetic implementation check would not satisfy the
-handoff's requirement for observed terminal behavior. The task needs a preserved
-terminal-event reproducer or a replacement case.
+An independent evaluator sent `yes` through the real Clack renderer in a Windows
+ConPTY. The pre-fix revision returned string `"yes"`, which fails the strict
+Boolean authorization contract. The fixed revision returned Boolean `true`.
+The evaluator therefore failed before the fix and passed after it.
+
+The same focused historical suite passed 27/27 before and 29/29 after the fix.
+The fixed suite's added real-PTY regression passed, and its setup integration
+test passed with a stubbed canary invoked exactly once. No provider was contacted
+and no credential was used.
 
 ## M1 — ready
 
@@ -60,6 +64,6 @@ routing, denial paths, non-research role isolation, and session-state exclusion.
 
 ## Gate result
 
-Only M1 and L1 may advance. The planned three-task pilot must not start with S1
-in its present form. Under the handoff's stop condition, obtain a defensible S1
-reproducer or approve a replacement task before MS2 or any model run.
+S1, M1, and L1 have each passed the historical red/green gate. MS1 is complete.
+This does not authorize MS2 or any model run; those remain outside the approved
+milestone scope.

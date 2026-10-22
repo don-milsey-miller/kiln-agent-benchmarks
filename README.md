@@ -7,11 +7,12 @@ production repository is used read-only for provenance and reconstruction.
 ## Current milestone
 
 MS0 (provenance) and MS1 (historical red/green validation) were evaluated on
-2026-10-22. Two cases are ready and one is blocked:
+2026-10-22. The original S1 case was rejected and replaced with issue #162.
+All three current cases are ready:
 
 | Task | Status | Result |
 | --- | --- | --- |
-| S1 / issue #160 | `not_benchmark_ready` | The provisional pair is invalid and the corrected pre-fix revision did not reproduce the failure on the Windows PTY runner. |
+| S1 / issue #162 | `ready` | A real Windows PTY returned string `"yes"` before the fix and Boolean `true` after it; the fixed setup path invokes its stubbed canary exactly once. |
 | M1 / issue #200 | `ready` | Native Windows red/green reproduction confirmed the crash status, release, and cleanup behavior. |
 | L1 / issue #215 | `ready` | The pre-fix wrapper omitted the research route; the fixed wrapper and real-child loopback tests passed. |
 
@@ -26,4 +27,5 @@ working clones, and private manifests are therefore ignored and remain only in
 the local `C:\Users\milsy\Documents\kiln-ai-benchmark` checkout. Do not push
 those files unless the repository is made private and the boundary is reviewed.
 
-No model was run and no RunPod resources were provisioned during MS0/MS1.
+The rejected issue #160 audit is retained in the reports for traceability. No
+model was run and no RunPod resources were provisioned during MS0/MS1.

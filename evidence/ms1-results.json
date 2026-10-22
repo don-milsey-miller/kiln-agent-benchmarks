@@ -17,12 +17,21 @@
   },
   "tasks": {
     "S1": {
-      "classification": "not_benchmark_ready",
-      "independentPreFixExit": 0,
+      "classification": "ready",
+      "issue": 162,
+      "replacesIssue": 160,
+      "independentPreFixExit": 1,
       "independentFixedExit": 0,
-      "existingPreFixTests": { "passed": 8, "failed": 0 },
-      "existingFixedTests": { "passed": 27, "failed": 0 },
-      "reason": "The expected historical failure did not reproduce, including a bracketed-paste PTY input."
+      "preFixFailure": "The real interactive renderer returned string 'yes' instead of Boolean true, so the strict authorization boundary treated approval as a decline.",
+      "fixedObservation": {
+        "rendererReturnType": "boolean",
+        "rendererReturnValue": true,
+        "stubbedCanaryInvocations": 1,
+        "realProviderContacted": false
+      },
+      "existingPreFixTests": { "passed": 27, "failed": 0 },
+      "existingFixedTests": { "passed": 29, "failed": 0 },
+      "fixedSetupIntegrationTests": { "passed": 1, "failed": 0 }
     },
     "M1": {
       "classification": "ready",
